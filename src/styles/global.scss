@@ -1,0 +1,22 @@
+@use './typography';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply antialiased font-body;
+}
+
+a {
+  @apply transition-colors;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
