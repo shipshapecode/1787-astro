@@ -8,6 +8,9 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "dependencies": {
+    "swiper": "^8.0.6"
+  },
   "devDependencies": {
     "astro": "^0.22.20",
     "autoprefixer": "^10.4.2",

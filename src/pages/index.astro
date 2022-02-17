@@ -1,4 +1,5 @@
 ---
+import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import NavMenu from '../components/NavMenu.astro';
 import Pricing from '../components/Pricing.astro';
@@ -8,7 +9,7 @@ import Footer from '../components/Footer.astro';
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link
       rel="preload"
@@ -72,19 +73,7 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
 
-      <div class="bg-cream flex justify-center w-full" id="about">
-        <div class="flex justify-center max-w-6xl py-20 w-full lg:py-32">
-          <div class="grid grid-cols-2 p-6 w-full">
-            <div>
-              <h2 class="text-4xl text-dark-green lg:text-6xl">
-                Headline goes here
-              </h2>
-
-              <p class="text-dark-green">Lorem ipsum more text goes here</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <About />
 
       <div class="flex justify-center w-full" id="perks">
         <div class="flex justify-center max-w-6xl py-20 w-full lg:py-32">
