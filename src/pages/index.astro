@@ -1,5 +1,7 @@
 ---
+import Contact from '../components/Contact.astro';
 import NavMenu from '../components/NavMenu.astro';
+import Pricing from '../components/Pricing.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -7,16 +9,35 @@ import Footer from '../components/Footer.astro';
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/BolognaBlack.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/SurtNormal-Bold.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/SurtNormal-Regular.woff2"
+      crossorigin="anonymous"
+    />
+
     <title>1787 Middleburg Coworking Space</title>
 
     <meta property="og:site_name" content="1787 Coworking" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="1787 Middleburg Coworking Space" />
     <meta property="og:url" content="https://1787.work/" />
-    <meta property="og:image" content="/img/logo.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:height" content="229">
-    <meta property="og:image:width" content="220">
+    <meta property="og:image" content="/img/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="229" />
+    <meta property="og:image:width" content="220" />
     <meta
       property="og:description"
       content="1787 is Middleburg's first coworking space. We have a dedicated fiber internet connection, a convenient location in downtown Middleburg, and many membership plans to choose from."
@@ -36,9 +57,9 @@ import Footer from '../components/Footer.astro';
 
     <main>
       <div class="flex justify-center">
-        <div class="flex justify-center max-w-7xl p-32 w-full">
+        <div class="flex justify-center max-w-6xl py-20 w-full lg:py-32">
           <div>
-            <h1 class="py-32 text-5xl text-center text-gold lg:text-8xl">
+            <h1 class="p-6 text-5xl text-center text-gold lg:py-32 lg:text-8xl">
               Middleburg's first coworking space
             </h1>
 
@@ -51,8 +72,8 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="bg-cream flex justify-center w-full" id="about">
-        <div class="flex justify-center max-w-7xl p-32 w-full">
-          <div class="grid grid-cols-2 w-full">
+        <div class="flex justify-center max-w-6xl py-20 w-full lg:py-32">
+          <div class="grid grid-cols-2 p-6 w-full">
             <div>
               <h2 class="text-4xl text-dark-green lg:text-6xl">
                 Headline goes here
@@ -65,49 +86,38 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="flex justify-center w-full" id="perks">
-        <div class="flex justify-center max-w-7xl p-32 w-full">
-          <div class="grid grid-cols-3 w-full">
-            <h2 class="col-span-1 text-4xl text-white lg:text-6xl">
+        <div class="flex justify-center max-w-6xl py-20 w-full lg:py-32">
+          <div class="grid grid-cols-1 p-6 w-full lg:grid-cols-3">
+            <h2 class=" text-4xl text-white lg:col-span-1 lg:text-6xl">
               Why 1787?
             </h2>
 
-            <div class="col-span-2"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gold flex justify-center w-full" id="perks">
-        <div class="flex justify-center max-w-7xl p-32 w-full">
-          <div class="text-center w-full">
-            <h2
-              class="m-auto text-4xl text-center text-white lg:text-6xl w-1/2"
-            >
-              Pricing &amp; Membership
-            </h2>
-
-            <div class="grid grid-cols-1 gap-5 w-full lg:grid-cols-3">
-              <div class="bg-white">
-                <h3 class="text-7xl text-dark-green">
-                  $199
-                  <span class="-ml-4 text-2xl">/mo</span>
-                </h3>
-              </div>
-              <div class="bg-dark-green">
-                <h3 class="text-7xl text-white">
-                  $399
-                  <span class="-ml-4 text-2xl">/mo</span>
-                </h3>
-              </div>
-              <div class="bg-white">
-                <h3 class="text-7xl text-dark-green">
-                  $699
-                  <span class="-ml-4 text-2xl">/mo</span>
-                </h3>
-              </div>
+            <div class="lg:col-span-2">
+              <ul class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+                <li>
+                  <img class="mb-4" src="/svgs/icons/pin.svg" />
+                  <h3 class="text-gold text-2xl">Location</h3>
+                </li>
+                <li>
+                  <img class="mb-4" src="/svgs/icons/lightning.svg" />
+                  <h3 class="text-gold text-2xl">High-speed Internet</h3>
+                </li>
+                <li>
+                  <img class="mb-4" src="/svgs/icons/snacks.svg" />
+                  <h3 class="text-gold text-2xl">Snacks & Drinks</h3>
+                </li>
+                <li>
+                  <img class="mb-4" src="/svgs/icons/bookable.svg" />
+                  <h3 class="text-gold text-2xl">Bookable Spaces</h3>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+
+      <Pricing />
+      <Contact />
     </main>
 
     <Footer />
