@@ -9,6 +9,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "preact": "^10.6.6",
     "swiper": "^8.0.6"
   },
   "devDependencies": {
