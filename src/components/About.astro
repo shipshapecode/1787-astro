@@ -1,10 +1,12 @@
 ---
+import Image from 'astro-imagetools';
+
 const images = [
-  '/img/space/1.png',
-  '/img/space/2.png',
-  '/img/space/3.png',
-  '/img/space/4.png',
-  '/img/space/5.png'
+  '/src/images/space/1.png',
+  '/src/images/space/2.png',
+  '/src/images/space/3.png',
+  '/src/images/space/4.png',
+  '/src/images/space/5.png'
 ];
 ---
 
@@ -98,7 +100,14 @@ const images = [
           <div class="swiper-wrapper">
             {images.map((image) => (
               <div class="swiper-slide !h-72 !w-72 xl:!h-[525px] xl:!w-[525px]">
-                <img class="h-full w-full object-cover" src={image} />
+                <Image
+                  format="webp"
+                  height="525px"
+                  loading="lazy"
+                  objectFit="cover"
+                  src={image}
+                  width="525px"
+                />
               </div>
             ))}
           </div>
