@@ -43,6 +43,10 @@ export default class About extends Component {
     this.setState({ swiper });
   }
 
+  // shouldComponentUpdate() {
+  //   return false;
+  // }
+
   render() {
     return (
       <div class="flex w-full justify-center bg-cream" id="about">

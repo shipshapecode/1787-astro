@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "preact": "^10.6.6",
+    "preact-render-to-string": "^5.1.19",
     "swiper": "^8.0.6"
   },
   "devDependencies": {
