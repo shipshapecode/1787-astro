@@ -14,7 +14,56 @@
 
         <h4 class="text-lg">111 E Washington St Middleburg, VA 20117</h4>
       </div>
-      <div class="">Inputs here</div>
+      <div class="">
+        <form name="contact" method="POST" data-netlify="true">
+          <p class="mb-5">
+            <label>
+              <span class="font-heading"> Name </span>
+
+              <input
+                class="bg-transparent border border-dark-green p-4 w-full"
+                type="text"
+                name="name"
+                required
+              />
+            </label>
+          </p>
+
+          <p class="mb-5">
+            <label>
+              <span class="font-heading"> Email </span>
+
+              <input
+                class="bg-transparent border border-dark-green p-4 w-full"
+                type="email"
+                name="email"
+                required
+              />
+            </label>
+          </p>
+
+          <p class="mb-5">
+            <label>
+              <span class="font-heading"> Message </span>
+
+              <textarea
+                class="bg-transparent border border-dark-green p-4 resize-none w-full"
+                name="message"
+                rows="4"
+                required
+              >
+              </textarea>
+            </label>
+          </p>
+
+          <button
+            class="bg-gold mt-3 p-4 text-lg text-white transition-all w-full hover:brightness-125"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
