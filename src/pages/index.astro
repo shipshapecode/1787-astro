@@ -1,5 +1,5 @@
 ---
-import About from '../components/About.astro';
+import About from '../components/About.jsx';
 import Contact from '../components/Contact.astro';
 import NavMenu from '../components/NavMenu.astro';
 import Pricing from '../components/Pricing.astro';
@@ -73,7 +73,7 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
 
-      <About />
+      <About client:only />
 
       <div class="flex justify-center w-full" id="perks">
         <div class="flex justify-center max-w-6xl py-20 w-full lg:py-32">
