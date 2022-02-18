@@ -11,7 +11,10 @@ module.exports = {
         'dark-green': '#1D2D2E',
         gold: '#AA7A4E',
         'light-gold': '#E7DFD1',
-				white: '#EFE9DF'
+        white: '#EFE9DF'
+      },
+      spacing: {
+        18: '4.5rem'
       }
     }
   }
