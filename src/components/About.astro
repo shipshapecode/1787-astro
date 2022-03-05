@@ -2,11 +2,11 @@
 import Image from 'astro-imagetools';
 
 const images = [
-  '/src/images/space/1.png',
-  '/src/images/space/2.png',
-  '/src/images/space/3.png',
-  '/src/images/space/4.png',
-  '/src/images/space/5.png'
+  { src: '/src/images/space/1.png', caption: '' },
+  { src: '/src/images/space/2.png', caption: '' },
+  { src: '/src/images/space/3.png', caption: '' },
+  { src: '/src/images/space/4.png', caption: '' },
+  { src: '/src/images/space/5.png', caption: '' }
 ];
 ---
 
@@ -16,14 +16,15 @@ const images = [
       <div class="flex flex-col">
         <div class="flex-grow">
           <h2 class="text-4xl text-dark-green lg:text-6xl">
-            Finally, premium coworking space in Middleburg
+            Premium coworking space in the heart of historic Middleburg
           </h2>
 
           <p class="my-4 text-dark-green text-lg">
-            Don't drive all the way to Leesburg or Ashburn just for a nice
-            coworking space. 1787's Middleburg coworking space includes blazing
-            fast internet, unlimited snacks and drinks, and many membership
-            options to fit your needs and budget.
+            At 1787, you won't need to drive all the way to Leesburg or Ashburn 
+            for an elevated coworking space experience. With a fiber-optic, 
+            high-speed internet connection, unlimited and locally sourced 
+            organic snacks and drinks, and many membership options to fit 
+            your needs and budget, 1787 is your answer to getting work done.
           </p>
         </div>
 
@@ -98,16 +99,17 @@ const images = [
       <div>
         <div class="swiper w-full xl:w-[500px] 2xl:w-[700px]">
           <div class="swiper-wrapper">
-            {images.map((image) => (
-              <div class="swiper-slide !h-72 !w-72 xl:!h-[525px] xl:!w-[525px]">
+            {images.map(({caption, src}) => (
+              <div class="swiper-slide !h-72 !w-72 xl:!h-[555px] xl:!w-[525px]">
                 <Image
                   format="webp"
                   height="1050px"
                   loading="lazy"
                   objectFit="cover"
-                  src={image}
+                  src={src}
                   width="1050px"
                 />
+                <div class="swiper-caption">{caption}</div>
               </div>
             ))}
           </div>
