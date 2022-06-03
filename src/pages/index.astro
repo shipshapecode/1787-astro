@@ -5,6 +5,8 @@ import NavMenu from '../components/NavMenu.astro';
 import Perks from '../components/Perks.astro';
 import Pricing from '../components/Pricing.astro';
 import Footer from '../components/Footer.astro';
+
+import '../styles/global.scss';
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -49,10 +51,6 @@ import Footer from '../components/Footer.astro';
       name="description"
       content="1787 is Middleburg's first coworking space. We have a dedicated fiber internet connection, a convenient location in downtown Middleburg, and many membership plans to choose from."
     />
-
-    <style lang="scss" global>
-      @import '../styles/global.scss';
-    </style>
   </head>
 
   <body
@@ -64,7 +62,9 @@ import Footer from '../components/Footer.astro';
       <div class="flex justify-center">
         <div class="flex justify-center max-w-6xl py-20 w-full lg:py-32">
           <div>
-            <h1 class="p-6 py-18 text-5xl text-center text-gold lg:py-32 lg:text-8xl">
+            <h1
+              class="p-6 py-18 text-5xl text-center text-gold lg:py-32 lg:text-8xl"
+            >
               Middleburg's first coworking space
             </h1>
 

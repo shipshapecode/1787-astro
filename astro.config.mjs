@@ -1,17 +1,23 @@
-import astroImagePlugin from 'astro-imagetools/plugin';
-// Full Astro Configuration API Documentation:
-// https://docs.astro.build/reference/configuration-reference
+import { defineConfig } from 'astro/config';
+import { astroImageTools } from 'astro-imagetools';
 
-// @type-check enabled!
-// VSCode and other TypeScript-enabled text editors will provide auto-completion,
-// helpful tooltips, and warnings if your exported object is invalid.
-// You can disable this by removing "@ts-check" and `@type` comments below.
-
-// @ts-check
-export default /** @type {import('astro').AstroUserConfig} */ ({
-  // // Enable the Preact renderer to support Preact JSX components.
-  // renderers: ['@astrojs/renderer-preact'],
+// https://astro.build/config
+export default defineConfig({
   vite: {
-    plugins: [astroImagePlugin]
-  }
+    plugins: [
+      {
+        name: "import.meta.url-transformer",
+        transform: (code, id) => {
+          if (id.endsWith(".astro"))
+            return code.replace(/import.meta.url/g, `"${id}"`);
+        },
+      },
+    ],
+  },
+  
+  experimental: {
+    integrations: true,
+  },
+
+  integrations: [astroImageTools]
 });

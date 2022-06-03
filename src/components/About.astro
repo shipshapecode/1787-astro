@@ -1,5 +1,5 @@
 ---
-import Image from 'astro-imagetools';
+import { Img } from 'astro-imagetools/components';
 
 const images = [
   { src: '/src/images/space/1.png', caption: '' },
@@ -20,11 +20,11 @@ const images = [
           </h2>
 
           <p class="my-4 text-dark-green text-lg">
-            At 1787, you won't need to drive all the way to Leesburg or Ashburn 
-            for an elevated coworking space experience. With a fiber-optic, 
-            high-speed internet connection, unlimited and locally sourced 
-            organic snacks and drinks, and many membership options to fit 
-            your needs and budget, 1787 is your answer to getting work done.
+            At 1787, you won't need to drive all the way to Leesburg or Ashburn
+            for an elevated coworking space experience. With a fiber-optic,
+            high-speed internet connection, unlimited and locally sourced
+            organic snacks and drinks, and many membership options to fit your
+            needs and budget, 1787 is your answer to getting work done.
           </p>
         </div>
 
@@ -99,15 +99,16 @@ const images = [
       <div>
         <div class="swiper w-full xl:w-[500px] 2xl:w-[700px]">
           <div class="swiper-wrapper">
-            {images.map(({caption, src}) => (
+            {images.map(({ caption, src }) => (
               <div class="swiper-slide !h-72 !w-72 xl:!h-[555px] xl:!w-[525px]">
-                <Image
+                <Img
+                  alt=""
                   format="webp"
-                  height="1050px"
+                  height={1050}
                   loading="lazy"
                   objectFit="cover"
                   src={src}
-                  width="1050px"
+                  width={1050}
                 />
                 <div class="swiper-caption">{caption}</div>
               </div>
@@ -122,9 +123,10 @@ const images = [
 <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
 />
 
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script is:inline src="https://unpkg.com/swiper@8/swiper-bundle.min.js"
+></script>
 
-<script>
+<script is:inline>
   const swiper = new Swiper('.swiper', {
     loop: true,
     slideToClickedSlide: true,
