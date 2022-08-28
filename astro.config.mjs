@@ -14,7 +14,7 @@ export default defineConfig({
       },
     ],
     ssr: {
-      noExternal: ['find-up']
+      external: ['find-up']
     }
   },
   
