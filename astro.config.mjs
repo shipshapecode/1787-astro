@@ -13,6 +13,9 @@ export default defineConfig({
         },
       },
     ],
+    ssr: {
+      external: ['find-up']
+    }
   },
   
   experimental: {
