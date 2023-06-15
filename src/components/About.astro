@@ -6,7 +6,8 @@ const images = [
   { src: '/src/images/space/2.jpg', caption: '' },
   { src: '/src/images/space/3.jpg', caption: '' },
   { src: '/src/images/space/4.jpg', caption: '' },
-  { src: '/src/images/space/5.jpg', caption: '' }
+  { src: '/src/images/space/5.jpg', caption: '' },
+  { src: '/src/images/space/6.jpg', caption: '' }
 ];
 ---
 
@@ -31,9 +32,9 @@ const images = [
         <div
           class="hidden items-center justify-self-end justify-between lg:flex"
         >
-          <span class="font-heading text-lg"
-            >0<span id="real-index">1</span>/05</span
-          >
+          <span class="font-heading text-lg">
+            0<span id="real-index">1</span>/0{images.length}
+          </span>
           <div>
             <button
               class="border border-gold inline-flex h-14 items-center justify-center mr-3 rounded-full text-gold transition-colors w-14 hover:bg-gold hover:text-white"
@@ -99,20 +100,22 @@ const images = [
       <div>
         <div class="swiper w-full xl:w-[500px] 2xl:w-[700px]">
           <div class="swiper-wrapper">
-            {images.map(({ caption, src }) => (
-              <div class="swiper-slide !h-72 !w-72 xl:!h-[555px] xl:!w-[525px]">
-                <Img
-                  alt=""
-                  format="webp"
-                  height={1050}
-                  loading="lazy"
-                  objectFit="cover"
-                  src={src}
-                  width={1050}
-                />
-                <div class="swiper-caption">{caption}</div>
-              </div>
-            ))}
+            {
+              images.map(({ caption, src }) => (
+                <div class="swiper-slide !h-72 !w-72 xl:!h-[555px] xl:!w-[525px]">
+                  <Img
+                    alt=""
+                    format="webp"
+                    height={1050}
+                    loading="lazy"
+                    objectFit="cover"
+                    src={src}
+                    width={1050}
+                  />
+                  <div class="swiper-caption">{caption}</div>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -120,7 +123,9 @@ const images = [
   </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
 />
 
 <script is:inline src="https://unpkg.com/swiper@8/swiper-bundle.min.js"
