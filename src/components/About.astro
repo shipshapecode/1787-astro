@@ -1,13 +1,20 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
+
+import space1 from '../images/space/1.jpg';
+import space2 from '../images/space/2.jpg';
+import space3 from '../images/space/3.jpg';
+import space4 from '../images/space/4.jpg';
+import space5 from '../images/space/5.jpg';
+import space6 from '../images/space/6.jpg';
 
 const images = [
-  { src: '/src/images/space/1.jpg', caption: '' },
-  { src: '/src/images/space/2.jpg', caption: '' },
-  { src: '/src/images/space/3.jpg', caption: '' },
-  { src: '/src/images/space/4.jpg', caption: '' },
-  { src: '/src/images/space/5.jpg', caption: '' },
-  { src: '/src/images/space/6.jpg', caption: '' }
+  { src: space1, caption: '' },
+  { src: space2, caption: '' },
+  { src: space3, caption: '' },
+  { src: space4, caption: '' },
+  { src: space5, caption: '' },
+  { src: space6, caption: '' }
 ];
 ---
 
@@ -103,14 +110,16 @@ const images = [
             {
               images.map(({ caption, src }) => (
                 <div class="swiper-slide !h-72 !w-72 xl:!h-[555px] xl:!w-[525px]">
-                  <Img
+                  <Image
                     alt=""
+                    fit="cover"
                     format="webp"
                     height={1050}
                     loading="lazy"
-                    objectFit="cover"
+                    sizes="(min-width: 1050px) 1050px, 100vw"
                     src={src}
                     width={1050}
+                    widths={[320, 612, 831, 977, 1050]}
                   />
                   <div class="swiper-caption">{caption}</div>
                 </div>
